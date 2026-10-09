@@ -2,40 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#a18cd1">
   <title>MoodScape</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="reminder-card" id="card">
-    <div class="reminder-quote" id="quote">
-      Pick your vibe today 🌈
-    </div>
-    <div class="mood-buttons">
-      <!-- Emoji buttons -->
-      <button class="mood-btn" data-mood="😂">😂</button>
-      <button class="mood-btn" data-mood="😍">😍</button>
-      <button class="mood-btn" data-mood="😒">😒</button>
-      <button class="mood-btn" data-mood="😁">😁</button>
-      <button class="mood-btn" data-mood="👌">👌</button>
-      <button class="mood-btn" data-mood="👍">👍</button>
-      <button class="mood-btn" data-mood="❤️">❤️</button>
-      <button class="mood-btn" data-mood="😎">😎</button>
-      <button class="mood-btn" data-mood="😉">😉</button>
-      <button class="mood-btn" data-mood="😜">😜</button>
-      <button class="mood-btn" data-mood="🤩">🤩</button>
-      <button class="mood-btn" data-mood="😥">😥</button>
-      <button class="mood-btn" data-mood="😴">😴</button>
-      <button class="mood-btn" data-mood="😫">😫</button>
-      <button class="mood-btn" data-mood="🤑">🤑</button>
-      <button class="mood-btn" data-mood="😨">😨</button>
-      <button class="mood-btn" data-mood="😰">😰</button>
-      <button class="mood-btn" data-mood="🥵">🥵</button>
-      <button class="mood-btn" data-mood="🥶">🥶</button>
-      <button class="mood-btn" data-mood="😵‍💫">😵‍💫</button>
-      <button class="mood-btn" data-mood="😡">😡</button>
-      <button class="mood-btn" data-mood="😇">😇</button>
-    </div>
+  <!-- Animated background -->
+  <div class="bg" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+    <span class="grain"></span>
   </div>
+
+  <main class="stage">
+    <section class="card" id="card" aria-live="polite">
+      <header class="card-head">
+        <span class="brand">MoodScape</span>
+        <span class="mood-name" id="moodName">Pick your vibe</span>
+      </header>
+
+      <div class="hero-emoji" id="heroEmoji" aria-hidden="true">🌈</div>
+
+      <blockquote class="quote" id="quote">
+        Pick your vibe today
+      </blockquote>
+
+      <div class="actions">
+        <button class="action" id="nextBtn" type="button">↻ Another one</button>
+        <button class="action" id="copyBtn" type="button">⧉ Copy</button>
+        <button class="action" id="randomBtn" type="button">✦ Surprise me</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="mood-buttons" id="moodButtons" role="group" aria-label="Choose your mood"></div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status">Copied!</div>
 
   <script src="script.js"></script>
 </body>
